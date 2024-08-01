@@ -13,5 +13,20 @@ namespace Calculos
             return ( x + y );
         }
 
+        public static double Subtracao( double x, double y ) 
+        { 
+            return ( x - y );
+        }
+
+        public static double Divisao( double x, double y )
+        {
+            return ( x / y );
+        }
+
+        public static double Multiplicacao( double x, double y )
+        {
+            return ( x * y );
+        }
+
     }
 }
