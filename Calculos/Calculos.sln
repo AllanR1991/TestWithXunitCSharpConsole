@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculos", "Calculos.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculos.Test", "..\Calculos.Test\Calculos.Test.csproj", "{331886E3-17A2-4E83-854C-94E67C653337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoLivro", "..\GerenciamentoLivro\GerenciamentoLivro.csproj", "{674B1906-ADD2-452A-8298-2473369109A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoLivro", "..\GerenciamentoLivro\GerenciamentoLivro.csproj", "{674B1906-ADD2-452A-8298-2473369109A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoLivro.Test", "..\GerenciamentoLivro.Test\GerenciamentoLivro.Test.csproj", "{CCC07A91-7789-4961-9469-BBDD6F860289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoLivro.Test", "..\GerenciamentoLivro.Test\GerenciamentoLivro.Test.csproj", "{CCC07A91-7789-4961-9469-BBDD6F860289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidacaoEmail", "..\ValidacaoEmail\ValidacaoEmail.csproj", "{97C4BDF5-4197-4C27-B5C4-F620A1332F4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidacaoEmail.Test", "..\ValidacaoEmail.Test\ValidacaoEmail.Test.csproj", "{AF4072D1-98A8-47DF-84BE-01BCD2D4CA23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{CCC07A91-7789-4961-9469-BBDD6F860289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCC07A91-7789-4961-9469-BBDD6F860289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCC07A91-7789-4961-9469-BBDD6F860289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97C4BDF5-4197-4C27-B5C4-F620A1332F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C4BDF5-4197-4C27-B5C4-F620A1332F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C4BDF5-4197-4C27-B5C4-F620A1332F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C4BDF5-4197-4C27-B5C4-F620A1332F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF4072D1-98A8-47DF-84BE-01BCD2D4CA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4072D1-98A8-47DF-84BE-01BCD2D4CA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4072D1-98A8-47DF-84BE-01BCD2D4CA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4072D1-98A8-47DF-84BE-01BCD2D4CA23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
