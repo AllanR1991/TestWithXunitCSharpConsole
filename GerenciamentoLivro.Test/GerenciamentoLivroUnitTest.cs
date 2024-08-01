@@ -10,7 +10,7 @@ namespace GerenciamentoLivro.Test
     public class GerenciamentoLivroUnitTest
     {
         //  Crie um teste unitário para o método AdicionarLivro que verifica se um livro é adicionado corretamente a uma lista de livros.  
-        [Fact]
+        [Fact] // indica um método de teste que é executado pelo executor de teste
         public void TestAdicionarLivroMetodh()
         {
             List<Livro> listaLivros = new List<Livro>();

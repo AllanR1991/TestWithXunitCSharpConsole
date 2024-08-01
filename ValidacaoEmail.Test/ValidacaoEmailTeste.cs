@@ -8,17 +8,17 @@ namespace ValidacaoEmail.Test
 {
     public class ValidacaoEmailTeste
     {        
-        [Theory]
-        [InlineData("allan@allan.com")]
-        [InlineData("allan")]
-        [InlineData("allan@gmailcom")]
-        [InlineData("allangmail.com")]
-        [InlineData("allan.ar@gmail.com")]
+        [Theory] // representa um pacote de testes que executa o mesmo código, mas têm diferentes argumentos de entrada.
+        [InlineData("allan@allan.com")] // especifica valores para essas entradas
+        [InlineData("allan")] // especifica valores para essas entradas
+        [InlineData("allan@gmailcom")] // especifica valores para essas entradas
+        [InlineData("allangmail.com")] // especifica valores para essas entradas
+        [InlineData("allan.ar@gmail.com")] // especifica valores para essas entradas
         public void TestEmailValid(string email)
         {
-            bool result = true;
+            var validEmail = Email.EmailValid(email);
 
-            var validEmail = 
+            Assert.True(validEmail);
         }
     }
 }
