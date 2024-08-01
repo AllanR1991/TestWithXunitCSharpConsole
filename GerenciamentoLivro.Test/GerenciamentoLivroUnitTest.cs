@@ -12,13 +12,14 @@ namespace GerenciamentoLivro.Test
         [Fact]
         public void TestAdicionarLivroMetodh()
         {
-            string livro = "Harry Poter";
-            string[] Livros = new string[10] ;
-            string[] result = ["Harry Poter",null,null,null,null,null, null, null, null, null];
+            List<Livro> listaLivros = new List<Livro>();
+            Livro livro = new Livro();
+            livro.Name = "Harry Poter";                      
+            string result = "Harry Poter";
 
-            var adicionaLivro = Livro.AdicionarLivro(livro, Livros);
+            var adicionaLivro = Livro.AdicionarLivro(livro, listaLivros);
 
-            Assert.Equal(result, adicionaLivro);
+            Assert.Equal(result, adicionaLivro[0].Name);
         }
     }
 }

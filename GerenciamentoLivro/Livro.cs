@@ -8,17 +8,12 @@ namespace GerenciamentoLivro
 {
     public class Livro
     {
+        public string Name {  get; set; }
         //  Crie um teste unitário para o método AdicionarLivro que verifica se um livro é adicionado corretamente a uma lista de livros.  
-        public static string[] AdicionarLivro(string livro, string[] ListaLivros )
+        public static List<Livro> AdicionarLivro(Livro livro, List<Livro> ListaLivros )
         {
-            for (int i = 0; i < ListaLivros.Length-1; i++)
-
-            if (ListaLivros[i]==null) 
-            {
-                ListaLivros[i] = livro;
-                break;
-            }
-
+            ListaLivros.Add(livro);
+            
             return ListaLivros;
         }
     }
