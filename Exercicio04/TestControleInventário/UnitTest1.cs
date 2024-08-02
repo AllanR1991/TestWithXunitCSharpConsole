@@ -7,47 +7,53 @@ namespace TestControleInventário
 {
     public class UnitTest1
     {
-        [Fact]     
-        public void Test1()
+        //  Arrange
+        public static Produto produto01 = new Produto{ Nome = "Quadro" , Quantidade = 4};
+        public static Produto produto02 = new Produto{ Nome = "Celular" , Quantidade = 6};
+        
+        List<Produto> resultList = new List<Produto>
         {
-            List<Produto> listaProduto = new List<Produto>
-            {
-                new Produto {  Nome = "PcGamer", Quantidade = 4  },
-                new Produto {  Nome = "Mesa", Quantidade = 7  },                
-                new Produto {  Nome = "Celular", Quantidade = 2  }
-            };
+            new Produto {  Nome = "PcGamer", Quantidade = 4  },
+            new Produto {  Nome = "Mesa", Quantidade = 7  },
+            new Produto {  Nome = "Celular", Quantidade = 3  },
+            new Produto{ Nome = "Quadro" , Quantidade = 4}
+        };
 
-            List<Produto> resultList = new List<Produto>
-            {
-                new Produto {  Nome = "PcGamer", Quantidade = 4  },
-                new Produto {  Nome = "Mesa", Quantidade = 7  },
-                new Produto {  Nome = "Celular", Quantidade = 3  }
-            };
+        List<Produto> resultList2 = new List<Produto>
+        {
+            new Produto {  Nome = "PcGamer", Quantidade = 4  },
+            new Produto {  Nome = "Mesa", Quantidade = 7  },
+            new Produto {  Nome = "Celular", Quantidade = 6  },            
+        };
 
-            //Produto produto = new Produto();
-            //produto.Nome = "Celular";
-            //produto.Quantidade = 2;
+        [Fact]     
+        public void AdicionarProduto_ProdutoNovo_DeveAdicionarNaLista()
+        {
+            // ACT
+            var adicionarProduto = Iventario.AdicionarProduto(produto01);
 
-            //var adicionarProduto = Iventario.AdicionarProduto(listaProduto, produto);
+            Assert.Contains(resultList, produto => produto.Nome == produto01.Nome && produto.Quantidade == produto01.Quantidade);
+        }
 
-            //Console.WriteLine(adicionarProduto);
-            //Console.WriteLine(resultList);
+        [Fact]
+        public void AdicionarProduto_ProdutoExistente_DeveAtualizarQuantidade()
+        {
+            // ACT           
+            var adicionarProduto = Iventario.AdicionarProduto(produto02);
 
-            Assert.Equal(JsonSerializer.Serialize(resultList), JsonSerializer.Serialize(listaProduto));
-            //int count = 0;
+            Assert.Contains(resultList2, produto => produto.Nome == produto02.Nome && produto.Quantidade == produto02.Quantidade);
+        }
 
-            //for (int i = 0; i < resultList.Count - 1; i++)
-            //{
-            //    Assert.Equal(resultList[i], listaProduto[i]);
-            //}
+        [Theory] // representa um pacote de testes que executa o mesmo código, mas têm diferentes argumentos de entrada.
+        [InlineData("PcGamer")] // especifica valores para essas entradas
+        [InlineData("Mesa")] // especifica valores para essas entradas
+        [InlineData("xxx")] // especifica valores para essas entradas
+        public void BuscaProduto_ProdutoExistente_DeveExibirQuantidade(string nomeProduto)
+        {
+            // ACT           
+            var buscaProduto = Iventario.BuscarQuantidadeProduto( nomeProduto );
 
-            //foreach (var x in resultList)
-            //{
-            //    Assert.Equal(x, (Produto)listaProduto[count]);
-            //    //Assert.Equal(x.Nome, listaProduto[count].Nome);
-            //    //Assert.Equal(x.Quantidade, listaProduto[count].Quantidade);
-            //    count++;
-            //}
+            Assert.NotNull(buscaProduto);
         }
     }
 }

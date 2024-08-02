@@ -8,44 +8,45 @@ namespace ControleInventário
 {
     public class Iventario
     {
-
-        public static List<Produto> AdicionarProduto(List<Produto> produtos, Produto newProduct)
+        public static List<Produto> listaProduto = new List<Produto>
         {
-            
-            if (produtos.Count == 0) produtos =  new List<Produto>();
-
+            new Produto {  Nome = "PcGamer", Quantidade = 4  },
+            new Produto {  Nome = "Mesa", Quantidade = 7  },
+            new Produto {  Nome = "Celular", Quantidade = 2  }
+        };
+        public static List<Produto> AdicionarProduto( Produto newProduct)
+        {
             if(newProduct.Nome != null)
             {
-                Produto produtoEncontrado = produtos.Find(produto => produto.Nome == newProduct.Nome);
+                Produto produtoEncontrado = listaProduto.Find(produto => produto.Nome == newProduct.Nome);
 
                 if (produtoEncontrado == null)
                 {
-                    produtos.Add(newProduct);
-                    return produtos;
+                    listaProduto.Add(newProduct);
+                    return listaProduto;
                 }
                 else
                 {
                     produtoEncontrado.Quantidade = newProduct.Quantidade;
-                    return produtos;
+                    return listaProduto;
                 }
             }
-            return produtos;
+            return listaProduto;
         }
 
-        public static int BuscarQuantidadeProduto(List<Produto> produtos, string searchProduto)
-        {
-            if (produtos.Count == 0) produtos = new List<Produto>();
-
+        
+        public static int? BuscarQuantidadeProduto( string searchProduto)
+        {  
             if (searchProduto != null)
             {
-                Produto produtoEncontrado = produtos.Find(produto => produto.Nome == searchProduto);
+                Produto produtoEncontrado = listaProduto.Find(produto => produto.Nome == searchProduto);
 
                 if (produtoEncontrado != null)
                 {                    
                     return produtoEncontrado.Quantidade;
                 }                
             }
-            return 0;
+            return null;
         }
     }
 }
